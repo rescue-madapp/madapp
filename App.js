@@ -5,6 +5,7 @@ import LoginForm from "./login-screen/login-form";
 export default function App() {
   return (
     <View style={styles.container}>
+      <StatusBar />
       <LoginForm />
     </View>
   );
