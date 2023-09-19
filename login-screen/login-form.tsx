@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Image } from "expo-image";
+import { StyleSheet } from "react-native";
 import { Surface, Button } from "react-native-paper";
 import submitForm from "./login-submit";
 import { FormField } from "../common/form-components";
@@ -9,7 +10,7 @@ export default function LoginForm() {
     const [password, setPassword] = useState();
 
     return (
-        <Surface style={{ backgroundColor: "#fff" }} elevation={0}>
+        <Surface style={styles.form} elevation={0}>
             <Image
                 source={require("./assets/mada_logo.png")}
                 style={{
@@ -42,3 +43,13 @@ export default function LoginForm() {
         </Surface>
     );
 }
+
+const styles = StyleSheet.create({
+    form: {
+      flex: 1,
+      backgroundColor: "#fff",
+      borderColor: "#ff0000",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+  });
