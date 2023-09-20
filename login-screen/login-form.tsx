@@ -3,7 +3,7 @@ import { Image } from "expo-image";
 import { StyleSheet } from "react-native";
 import { Surface, Button } from "react-native-paper";
 import submitForm from "./login-submit";
-import { FormField } from "../common/form-components";
+import { FormField, SubmitButton } from "../common/form-components";
 
 export default function LoginForm() {
     const [username, setUsername] = useState();
@@ -12,7 +12,7 @@ export default function LoginForm() {
     return (
         <Surface style={styles.form} elevation={0}>
             <Image
-                source={require("./assets/mada_logo.png")}
+                source={require("../common/assets/mada_logo.png")}
                 style={{
                     marginBottom: 50,
                     height: 119,
@@ -29,17 +29,9 @@ export default function LoginForm() {
                 label="סיסמה"
                 isPassword
             />
-            <Button
-                style={{
-                    backgroundColor: "#ff0000",
-                    borderRadius: 4,
-                    padding: 5,
-                }}
-                textColor="black"
-                onPress={() => submitForm(username, password)}
-            >
+            <SubmitButton action={submitForm} actionParams={[username, password]}>
                 התחברות
-            </Button>
+            </SubmitButton>
         </Surface>
     );
 }
