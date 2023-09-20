@@ -5,7 +5,7 @@ import { Surface, Button } from "react-native-paper";
 import submitForm from "./login-submit";
 import { FormField, SubmitButton } from "../common/form-components";
 
-export default function LoginForm() {
+export default function LoginForm({ navigation }) {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
@@ -29,8 +29,17 @@ export default function LoginForm() {
                 label="סיסמה"
                 isPassword
             />
-            <SubmitButton action={submitForm} actionParams={[username, password]}>
+            <SubmitButton
+                action={submitForm}
+                actionParams={[username, password]}
+            >
                 התחברות
+            </SubmitButton>
+            <SubmitButton
+                action={() => navigation.navigate("Register")}
+                actionParams={[]}
+            >
+                הרשמה
             </SubmitButton>
         </Surface>
     );
@@ -38,10 +47,10 @@ export default function LoginForm() {
 
 const styles = StyleSheet.create({
     form: {
-      flex: 1,
-      backgroundColor: "#fff",
-      borderColor: "#ff0000",
-      alignItems: "center",
-      justifyContent: "center",
+        flex: 1,
+        backgroundColor: "#fff",
+        borderColor: "#ff0000",
+        alignItems: "center",
+        justifyContent: "center",
     },
-  });
+});

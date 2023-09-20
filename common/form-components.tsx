@@ -50,18 +50,18 @@ export function FormField(props: FormFieldProps): JSX.Element {
 }
 
 export function FormDateField(props: DateFieldProps): JSX.Element {
-    return(
-    <DatePickerInput
-        locale="he"
-        label={props.label}
-        value={props.formDataState.data}
-        onChange={(newData) => props.formDataState.setData(newData)}
-        inputMode="start"
-        style={{marginBottom: 20, width: 200}}
-        mode="outlined"
-        outlineColor="#ff0000"
-        activeOutlineColor="#ff0000"
-    />
+    return (
+        <DatePickerInput
+            locale="he"
+            label={props.label}
+            value={props.formDataState.data}
+            onChange={(newData) => props.formDataState.setData(newData)}
+            inputMode="start"
+            style={{ marginBottom: 20, width: 200 }}
+            mode="outlined"
+            outlineColor="#ff0000"
+            activeOutlineColor="#ff0000"
+        />
     );
 }
 
@@ -77,6 +77,7 @@ export const SubmitButton: React.FC<SubmitButtonProps> = ({
                 borderRadius: 4,
                 padding: 5,
                 width: 224,
+                marginBottom: 20,
             }}
             textColor="black"
             onPress={() => action(...actionParams)}
