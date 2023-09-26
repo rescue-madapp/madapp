@@ -57,7 +57,7 @@ export function FormDateField(props: DateFieldProps): JSX.Element {
             value={props.formDataState.data}
             onChange={(newData) => props.formDataState.setData(newData)}
             inputMode="start"
-            style={{ marginBottom: 20, width: 200 }}
+            style={{ marginBottom: 20, width: 224, maxWidth: 224, alignContent: 'center'}}
             mode="outlined"
             outlineColor="#ff0000"
             activeOutlineColor="#ff0000"
