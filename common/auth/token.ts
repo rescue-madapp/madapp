@@ -19,13 +19,18 @@ type RegisterDetails = {
     city: string;
 };
 
-export function fetchToken(details: LoginDetails | RegisterDetails) {
+type LoginResponse = {
+    access_token: string;
+    token_type: string;
+}
+
+export function fetchToken(details: LoginDetails | RegisterDetails): string {
     const url = [config.BASE_URL, config.AUTH_URL].join();
-    const { data, error } = useFetch<Response>(url, {
+    const { data, error } = useFetch<LoginResponse>(url, {
         method: "POST",
         body: JSON.stringify(details),
     });
-    return data.json();
+    return data.access_token;
 }
 
 export function isTokenValid(token: string): boolean {
