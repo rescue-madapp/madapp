@@ -11,7 +11,7 @@ export default function App() {
         <NavigationContainer>
           <StatusBar />
           <stack.Navigator>
-            <stack.Screen name="Login" component={LoginForm} options={{headerShown: false}} />
+            <stack.Screen name="Main" component={MainForm} options={{headerShown: false}} />
             </stack.Navigator>
         </NavigationContainer>
     );
