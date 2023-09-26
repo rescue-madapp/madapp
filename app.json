@@ -32,6 +32,9 @@
         "projectId": "40debe65-6202-467f-88a4-256592de216d"
       }
     },
-    "owner": "gogoname"
+    "owner": "gogoname",
+    "plugins": [
+      "expo-router"
+    ]
   }
 }

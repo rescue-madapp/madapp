@@ -2,7 +2,10 @@ import { useState, SetStateAction } from "react";
 import { TextInput } from "react-native-paper";
 
 type FormFieldProps = {
-    formDataState: {data: string, setData: (value: SetStateAction<string>) => void};
+    formDataState: {
+        data: string;
+        setData: (value: SetStateAction<string>) => void;
+    };
     label: string;
     isPassword?: boolean;
 };
@@ -12,9 +15,7 @@ export function FormField(props: FormFieldProps): JSX.Element {
         <TextInput
             label={props.label}
             value={props.formDataState.data}
-            onChangeText={(newData) =>
-                props.formDataState.setData(newData)
-            }
+            onChangeText={(newData) => props.formDataState.setData(newData)}
             mode="outlined"
             textAlign="center"
             outlineColor="#ff0000"

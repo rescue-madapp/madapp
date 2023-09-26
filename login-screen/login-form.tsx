@@ -46,10 +46,10 @@ export default function LoginForm() {
 
 const styles = StyleSheet.create({
     form: {
-      flex: 1,
-      backgroundColor: "#fff",
-      borderColor: "#ff0000",
-      alignItems: "center",
-      justifyContent: "center",
+        flex: 1,
+        backgroundColor: "#fff",
+        borderColor: "#ff0000",
+        alignItems: "center",
+        justifyContent: "center",
     },
-  });
+});
