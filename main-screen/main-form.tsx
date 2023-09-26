@@ -1,10 +1,11 @@
 import { useState } from "react";
+import {Text} from 'react-native';
 import { Image } from "expo-image";
 import { StyleSheet } from "react-native";
 import { Surface, Button } from "react-native-paper";
 import { FormField } from "../common/form-components";
 
-export default function LoginForm() {
+export default function MainForm() {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
@@ -13,31 +14,31 @@ export default function LoginForm() {
             <Image
                 source={require("./assets/mada_logo.png")}
                 style={{
-                    marginBottom: 50,
+                    marginBottom: 25,
                     height: 119,
                     width: 224,
-                    margin: 30,
+                    margin: 15,
                 }}
             />
-            <FormField
-                formDataState={{ data: username, setData: setUsername }}
-                label="שם משתמש"
-            />
-            <FormField
-                formDataState={{ data: password, setData: setPassword }}
-                label="סיסמה"
-                isPassword
-            />
-            <Button
+            <Text style={styles.titleText} ברוכים הבאים/>
+            <Image
+                source={require("./assets/mada_kids.jpg")}
                 style={{
-                    backgroundColor: "#ff0000",
-                    borderRadius: 4,
-                    padding: 5,
+                    marginBottom: 25,
+                    height: 119,
+                    width: 224,
+                    margin: 15,
                 }}
-                textColor="black" 
-            >
-                התחברות
-            </Button>
+            />
+            <Image
+                source={require("./assets/blood_donations.jpg")}
+                style={{
+                    marginBottom: 25,
+                    height: 119,
+                    width: 224,
+                    margin: 15,
+                }}
+            />  
         </Surface>
     );
 }
@@ -50,4 +51,11 @@ const styles = StyleSheet.create({
       alignItems: "center",
       justifyContent: "center",
     },
+    baseText: {
+      fontFamily: 'Cochin',
+    },
+    titleText: {
+      fontSize: 20,
+      fontWeight: 'bold',
+    }
   });
