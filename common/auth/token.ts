@@ -6,15 +6,14 @@ import { config } from "../../consts";
 // in order to be parsed correctly by the Python server.
 
 type LoginDetails = {
-    username: string;
+    email: string;
     password: string;
     grant_type: string;
 };
 
 type RegisterDetails = {
-    first_name: string;
-    last_name: string;
-    username: string;
+    full_name: string;
+    email: string;
     password: string;
     birth_date: string;
     city: string;
