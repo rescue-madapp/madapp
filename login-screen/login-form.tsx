@@ -4,15 +4,16 @@ import { StyleSheet } from "react-native";
 import { Surface, Button } from "react-native-paper";
 import submitForm from "./login-submit";
 import { FormField } from "../common/form-components";
+import { BottomMenu } from "../menu/menu";
 
-export default function LoginForm() {
+export default function LoginForm({ navigation }) {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
     return (
         <Surface style={styles.form} elevation={0}>
             <Image
-                source={require("./assets/mada_logo.png")}
+                source={require("../common/assets/mada_logo.png")}
                 style={{
                     marginBottom: 50,
                     height: 119,
@@ -29,27 +30,30 @@ export default function LoginForm() {
                 label="סיסמה"
                 isPassword
             />
-            <Button
-                style={{
-                    backgroundColor: "#ff0000",
-                    borderRadius: 4,
-                    padding: 5,
-                }}
-                textColor="black"
-                onPress={() => submitForm(username, password)}
+            <SubmitButton
+                action={submitForm}
+                actionParams={[username, password]}
             >
                 התחברות
+            </SubmitButton>
+            <SubmitButton
+                action={() => navigation.navigate("Register")}
+                actionParams={[]}
+            >
+                הרשמה
+            </SubmitButton>
             </Button>
+            <BottomMenu />
         </Surface>
     );
 }
 
 const styles = StyleSheet.create({
     form: {
-      flex: 1,
-      backgroundColor: "#fff",
-      borderColor: "#ff0000",
-      alignItems: "center",
-      justifyContent: "center",
+        flex: 1,
+        backgroundColor: "#fff",
+        borderColor: "#ff0000",
+        alignItems: "center",
+        justifyContent: "center",
     },
-  });
+});
