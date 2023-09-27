@@ -13,7 +13,9 @@ export default function App() {
         <NavigationContainer>
           <StatusBar />
           <stack.Navigator>
-            <stack.Screen name="Profile" component={LogEvent} options={{headerShown: false}} />
+            <stack.Screen name="Log event" component={LogEvent} options={{headerShown: false}} />
+            <stack.Screen name="Login" component={LoginForm} options={{headerShown: false}} />
+            <stack.Screen name="Register" component={RegisterForm} options={{headerShown: false}} />
             </stack.Navigator>
         </NavigationContainer>
     );
