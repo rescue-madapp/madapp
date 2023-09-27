@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 import { Image } from "expo-image";
 import { useState } from "react";
 import { FormDateField, FormField, SubmitButton } from "../common/form-components";
-import { submitRegister } from "./register-submit";
+import submitRegister from "./register-submit";
 
 export default function RegisterForm() {
     const [firstName, setFirstName] = useState("");
@@ -47,6 +47,7 @@ export default function RegisterForm() {
             <FormField
                 formDataState={{ data: password, setData: setPassword }}
                 label="סיסמה"
+                isPassword
             />
             <SubmitButton
                 action={submitRegister}
