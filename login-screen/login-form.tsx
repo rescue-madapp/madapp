@@ -3,7 +3,8 @@ import { Image } from "expo-image";
 import { StyleSheet } from "react-native";
 import { Surface, Button } from "react-native-paper";
 import submitForm from "./login-submit";
-import { FormField, SubmitButton } from "../common/form-components";
+import { FormField } from "../common/form-components";
+import { BottomMenu } from "../menu/menu";
 
 export default function LoginForm({ navigation }) {
     const [username, setUsername] = useState();
@@ -41,6 +42,8 @@ export default function LoginForm({ navigation }) {
             >
                 הרשמה
             </SubmitButton>
+            </Button>
+            <BottomMenu />
         </Surface>
     );
 }
