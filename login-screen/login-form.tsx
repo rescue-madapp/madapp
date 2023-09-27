@@ -42,7 +42,6 @@ export default function LoginForm({ navigation }) {
             >
                 הרשמה
             </SubmitButton>
-            <BottomMenu />
         </Surface>
     );
 }

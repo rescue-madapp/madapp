@@ -73,7 +73,6 @@ export const SubmitButton: React.FC<SubmitButtonProps> = ({
     return (
         <Button
             style={{
-                flex: 1,
                 justifyContent: 'center',
                 alignItems: 'center',
                 backgroundColor: "#ff0000",

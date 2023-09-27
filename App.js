@@ -1,24 +1,20 @@
 import { StatusBar } from "expo-status-bar";
-import { View, StyleSheet } from "react-native";
-import LoginForm from "./login-screen/login-form";
+import { StyleSheet, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import RegisterForm from "./register-screen/register-form";
+import LoginForm from "./login-screen/login-form";
+
+const stack = createNativeStackNavigator();
 
 export default function App() {
     return (
-        <View style={styles.form}>
-            <StatusBar />
-            <LoginForm />
-            <RegisterForm />
-        </View>
+        <NavigationContainer>
+          <StatusBar />
+          <stack.Navigator>
+            <stack.Screen name="Login" component={LoginForm} options={{headerShown: false}} />
+            <stack.Screen name="Register" component={RegisterForm} options={{headerShown: false}} />
+            </stack.Navigator>
+        </NavigationContainer>
     );
 }
-
-const styles = StyleSheet.create({
-    form: {
-        flex: 1,
-        backgroundColor: "#fff",
-        borderColor: "#ff0000",
-        alignItems: "center",
-        justifyContent: "center",
-    },
-});
