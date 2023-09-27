@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Image } from "expo-image";
 import { StyleSheet, View } from "react-native";
-import { Surface, Button } from "react-native-paper";
+import { Surface, Button, Text } from "react-native-paper";
 import submitForm from "./login-submit";
 import { FormField } from "../common/form-components";
 
