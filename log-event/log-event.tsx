@@ -69,7 +69,6 @@ export default function LogEvent() {
                 formDataState={{ data: username, setData: setUsername }}
                 label="ספר/י קצת יותר"
             />
-
             <Button
                 style={{
                     backgroundColor: "#ff0000",
@@ -95,7 +94,6 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         minWidth: 224,
         paddingHorizontal: 50,
-        
     },
     form: {
       flex: 1,
@@ -122,4 +120,3 @@ const styles = StyleSheet.create({
         fontSize:25,
     },
   });
-

@@ -22,7 +22,7 @@ export function ListItem() {
 }
 
 
-export default function ProfileForm({ navigation }) {
+export default function ProfileForm() {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
@@ -60,7 +60,6 @@ export default function ProfileForm({ navigation }) {
             }}> שם </Text>
             <Text style={{
                 borderWidth: 1,
-                outlineColor:"#ff0000",
                 borderColor:"#ff0000",
                 backgroundColor: "white",
                 borderRadius: 4,
@@ -81,7 +80,6 @@ export default function ProfileForm({ navigation }) {
             }}> עיר מגורים </Text>
             <Text style={{
               borderWidth: 1,
-              outlineColor:"#ff0000",
               borderColor:"#ff0000",
               backgroundColor: "white",
               borderRadius: 4,
@@ -101,7 +99,6 @@ export default function ProfileForm({ navigation }) {
                 alignItems: 'center',
             }}> כתובת </Text><Text style={{
             borderWidth: 1,
-            outlineColor:"#ff0000",
             borderColor:"#ff0000",
             backgroundColor: "white",
             borderRadius: 4,
@@ -113,7 +110,7 @@ export default function ProfileForm({ navigation }) {
             alignItems: 'center',
         }}>אבן גבירול 126</Text>
             <SubmitButton
-                action={() => navigation.navigate("Register")}
+                action={() => null}
                 actionParams={[]}
             >
                 סיום וחזרה
