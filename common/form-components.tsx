@@ -57,7 +57,7 @@ export function FormDateField(props: DateFieldProps): JSX.Element {
             value={props.formDataState.data}
             onChange={(newData) => props.formDataState.setData(newData)}
             inputMode="start"
-            style={{ marginBottom: 20, width: 224, maxWidth: 224, alignContent: 'center'}}
+            style={{ flex: 1, alignItems: 'center', justifyContent: 'center', marginBottom: 20, width: 224 }}
             mode="outlined"
             outlineColor="#ff0000"
             activeOutlineColor="#ff0000"
@@ -73,6 +73,9 @@ export const SubmitButton: React.FC<SubmitButtonProps> = ({
     return (
         <Button
             style={{
+                flex: 1,
+                justifyContent: 'center',
+                alignItems: 'center',
                 backgroundColor: "#ff0000",
                 borderRadius: 4,
                 padding: 5,
