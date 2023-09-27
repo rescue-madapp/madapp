@@ -6,48 +6,62 @@ import { config } from "../../consts";
 // in order to be parsed correctly by the Python server.
 
 type LoginDetails = {
-    email: string;
+    username: string;
     password: string;
     grant_type: string;
+    scope?: string;
+    client_id?: string;
+    client_secret?: string;
 };
 
 type RegisterDetails = {
     full_name: string;
-    email: string;
+    username: string;
     password: string;
     birth_date: string;
     city: string;
+    scope?: string;
+    client_id?: string;
+    client_secret?: string;
+    grant_type: string;
 };
 
 type LoginResponse = {
     access_token: string;
     token_type: string;
-}
+};
 
-export function fetchToken(details: LoginDetails | RegisterDetails): string {
-    const url = [config.BASE_URL, config.AUTH_URL].join();
-    const { data, error } = useFetch<LoginResponse>(url, {
+export async function fetchToken(details: LoginDetails | RegisterDetails): Promise<string> {
+    const url = [config.BASE_URL, config.AUTH_URL].join('');
+    details.scope = '';
+    details.client_id = '';
+    details.client_secret = '';
+    details.grant_type = '';
+    const response = await fetch(url, {
         method: "POST",
-        body: JSON.stringify(details),
+        headers: new Headers({'accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded'}),
+        // body: JSON.stringify(details),
+        body: new URLSearchParams(details),
+        redirect: 'follow',
     });
-    return data.access_token;
+    return response.json();
 }
 
-export function isTokenValid(token: string): boolean {
-    const url = [config.BASE_URL, config.AUTH_URL].join();
-    const { data, error } = useFetch<Response>(url, {
+export async function isTokenValid(token: string): Promise<boolean> {
+    const url = [config.BASE_URL, config.AUTH_URL].join('');
+    const response = await fetch(url, {
         method: "GET",
+        headers: new Headers({'content-type': 'application/x-www-form-urlencoded'}),
         body: JSON.stringify({ Authorization: "Bearer" + token }),
     });
-    return data.status == 200;
+    return response.status == 200;
 }
 
-export function saveToken(token: string): void {
-    useAsync(setItemAsync("TOKEN", token));
+export async function saveToken(token: string) {
+    await (setItemAsync("TOKEN", token));
 }
 
-export function getToken(): string {
-    const { data, error } = useAsync<string>(getItemAsync("TOKEN"));
-    if (data) return data;
-    throw error;
+export async function getToken(): Promise<string> {
+    const data = await (getItemAsync("TOKEN"));
+    return data;
 }
