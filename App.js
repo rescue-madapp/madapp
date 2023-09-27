@@ -3,6 +3,7 @@ import { StyleSheet, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import RegisterForm from "./register-screen/register-form";
+import LoginForm from "./login-screen/login-form";
 
 const stack = createNativeStackNavigator();
 
@@ -11,7 +12,8 @@ export default function App() {
         <NavigationContainer>
           <StatusBar />
           <stack.Navigator>
-            <stack.Screen name="Profile" component={RegisterForm} options={{headerShown: false}} />
+            <stack.Screen name="Login" component={LoginForm} options={{headerShown: false}} />
+            <stack.Screen name="Register" component={RegisterForm} options={{headerShown: false}} />
             </stack.Navigator>
         </NavigationContainer>
     );
