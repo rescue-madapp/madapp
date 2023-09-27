@@ -8,6 +8,7 @@ import LoginForm from "./login-screen/login-form";
 import ProfileForm from "./profile-page/profile-form";
 import MainScreen from "./main-screen/main-screen";
 
+
 const stack = createNativeStackNavigator();
 
 export default function App() {
