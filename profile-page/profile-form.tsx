@@ -39,6 +39,10 @@ export default function ProfileForm({ navigation }) {
                 }}
             />
             <Text style={{
+                fontWeight: 'bold',
+                textShadowColor: "red",
+                textShadowOffset: {width: 5, height:5},
+                textShadowRadius: 20,
                 color: "#ff0000",
                 borderRadius: 4,
                 padding: 5,
