@@ -1,7 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
-import LoginForm from "./login-screen/login-form";
-import RegisterForm from "./register-screen/register-form";
+import ProfileForm from "./profile-page/profile-form";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
@@ -12,8 +11,7 @@ export default function App() {
         <NavigationContainer>
           <StatusBar />
           <stack.Navigator>
-            <stack.Screen name="Login" component={LoginForm} options={{headerShown: false}} />
-            <stack.Screen name="Register" component={RegisterForm} options={{headerShown: false}} />
+            <stack.Screen name="Profile" component={ProfileForm} options={{headerShown: false}} />
             </stack.Navigator>
         </NavigationContainer>
     );
