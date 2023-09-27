@@ -31,7 +31,7 @@ export default function LoginForm({ navigation }) {
                 isPassword
             />
             <SubmitButton
-                action={submitForm}
+                action={() => navigation.navigate("Main")}
                 actionParams={[username, password]}
             >
                 התחברות

@@ -16,11 +16,11 @@ export default function App() {
         <NavigationContainer>
           <StatusBar />
           <stack.Navigator>
-            <stack.Screen name="Main" component={MainScreen} options={{headerShown: false}} />
-            <stack.Screen name="Profile" component={ProfileForm} options={{headerShown: false}} />
-            <stack.Screen name="Log Event" component={LogEvent} options={{headerShown: false}} />
             <stack.Screen name="Login" component={LoginForm} options={{headerShown: false}} />
+            <stack.Screen name="Main" component={MainScreen} options={{headerShown: false}} />
             <stack.Screen name="Register" component={RegisterForm} options={{headerShown: false}} />
+            <stack.Screen name="Log Event" component={LogEvent} options={{headerShown: false}} />
+            <stack.Screen name="Profile" component={ProfileForm} options={{headerShown: false}} />
             </stack.Navigator>
         </NavigationContainer>
     );
