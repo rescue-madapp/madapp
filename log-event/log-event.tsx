@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Image } from "expo-image";
 import { StyleSheet, View, Text} from "react-native";
-import { Surface, Button } from "react-native-paper";
+import { Surface, Button, TextInput } from "react-native-paper";
 import submitForm from "./login-submit";
 import { FormField } from "../common/form-components";
 import * as React from 'react';
@@ -95,18 +95,19 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         minWidth: 224,
         paddingHorizontal: 50,
+        
     },
     form: {
       flex: 1,
       backgroundColor: "#fff",
       borderColor: "#ff0000",
       alignItems: "center",
-      justifyContent: "center",
       alignContent:"center",
       fontSize: 20,
       color: "red",
       marginBottom: 20,
-      textAlign: "right",   
+      textAlign: "right",
+
     },
     boldText:{
         fontWeight: 'bold',
