@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Image } from "expo-image";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Text} from "react-native";
 import { Surface, Button } from "react-native-paper";
 import submitForm from "./login-submit";
 import { FormField } from "../common/form-components";
@@ -20,6 +20,9 @@ export default function LogEvent() {
                     margin: 30,
                 }}
             />
+            <Text style={styles.boldText}>
+                קורס החייאה
+            </Text>
             <FormField
                 formDataState={{ data: username, setData: setUsername }}
                 label="שם מfmfשתמש"
@@ -40,9 +43,6 @@ export default function LogEvent() {
             >
                 התחברות
             </Button>
-            <Text style={styles.boldText}>
-                קורס החייאה
-            </Text>
         </Surface>
 
     );
@@ -58,6 +58,8 @@ const styles = StyleSheet.create({
       borderColor: "#ff0000",
       alignItems: "center",
       justifyContent: "center",
+      fontSize: 20,
+      color: "red",
     },
     boldText:{
         fontSize: 20,
